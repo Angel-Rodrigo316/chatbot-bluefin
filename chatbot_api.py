@@ -29,6 +29,8 @@ def chat():
     response = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
     return jsonify({"response": response})
 
+
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Render define automáticamente esta variable
+    port = int(os.environ.get("PORT", 10000))  # Render asigna automáticamente un puerto
     app.run(host="0.0.0.0", port=port)
